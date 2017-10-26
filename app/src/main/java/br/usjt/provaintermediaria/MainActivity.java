@@ -7,8 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * @author Ricardo Silva de Almeida 201518467
+ */
 public class MainActivity extends Activity {
 
+    /**
+     * @author Ricardo Silva de Almeida 201518467
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +25,11 @@ public class MainActivity extends Activity {
     public final static String EXTRA_N = "br.usjt.provaintermediaria.N";
 
 
+    /**
+     * @author Ricardo Silva de Almeida 201518467
+     */
     public void startListActivity(View v){
-        Intent i = new Intent(this, ListActivity.class);
+        Intent intent = new Intent(this, ListActivity.class);
         EditText tabuada, ate;
         tabuada = (EditText)findViewById(R.id.etxt_tabuada);
         ate = (EditText)findViewById(R.id.etxt_ate);
@@ -29,13 +38,12 @@ public class MainActivity extends Activity {
         tab = Integer.parseInt(tabuada.getText().toString());
         n = Integer.parseInt(ate.getText().toString());
 
-        System.out.println(tab);
-        System.out.println(n);
+        intent.putExtra(EXTRA_TABUADA, tab);
+        intent.putExtra(EXTRA_N, n);
 
-        i.putExtra(EXTRA_TABUADA, tab);
-        i.putExtra(EXTRA_N, n);
+        startActivity(intent);
 
-        startActivity(i);
+        this.onStop();
 
     }
 }
