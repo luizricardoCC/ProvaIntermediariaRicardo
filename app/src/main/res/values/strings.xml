@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ProvaIntermediaria</string>
+    <string name="txt_tabuada">Tabuada do</string>
+    <string name="txt_ate">Até</string>
+    <string name="btn_calcular">Calcular</string>
+</resources>
